@@ -1,0 +1,191 @@
+install oracle virtual box
+
+
+install havdetectiontool
+
+
+network -allow vm
+
+Nat-default
+select another option to allow vm
+
+
+shared folder - ubuntu iso archive file
+
+storage - ubuntu
+
+display scale factor - 120
+
+
+right click to image - start - normal start
+
+setting
+ -storage
+    -c:program files oracle virtualbox vboxguestaddition.iso----------to share folder
+
+virtual box
+setting shared folder 
+   machine folder---+----select your windows folder d:\dev\cd
+
+sudo su - super user ..which will shift to "root"
+
+apt-get install -y default-jdk
+
+ubuntu terminal :
+cd /media
+
+mkdir windowshare
+
+mount -t vboxsf cd /media/windowshare
+
+
+
+
+
+
+apt-get install -y  docker.io 
+
+service docker status
+
+docker info
+
+docker pull tomcat:8.0
+
+tomcat run -it -p 8888:8080 tomcat:8.0
+
+
+test it on ubuntu browser
+localhost:8888
+
+stop the server
+
+download sample war file on windows 
+create a folder in shared folder - webapps
+and put it on shared folder(d:\dev\cd\webapps)
+
+terminal:to deploy sample.war on tomcat
+
+docker run -it -p  8888:8080 -v /media/windowshare/webapps:/usr/local/tomcat/webapps tomcat:8.0
+
+v-volume
+
+test it on browser
+localhost:8888/sample
+
+
+
+
+
+docker - v - if you are not getting : getting message not installed
+apt-get update && apt-get install -y docker.io
+
+Docker commands :
+-----------------
+docker images
+
+
+
+docker pull centos:latest  - add the 
+
+docker info
+
+docker ps =>currently running containers
+
+Images - 4(why with single image)
+every image consist of layers 
+
+
+docker run centos => to create container
+
+
+to run centos terminal command -> docker run -it centos /bin/bash
+
+to confirm we are not in ubuntu, try ubuntu command
+>apt-get
+
+Nowadays we don't want to provide jar and war,  
+=>images
+images contain war
+
+Ctrl+P+Q
+exit from centos
+
+docker ps
+
+
+To install Java
+apt-get install -y openjdk-7-jdk
+
+To install Tomcat
+docker pull tomcat:7.0
+
+docker run -it --rm -p 8888:8080 tomcat:7.0
+
+can  use -d backgroud process
+docker run -it -d -p 8888:8080 tomcat:7.0
+
+test it on browser(ubuntu)
+you can check it on windows also provided you get ipaddress of ubuntu
+
+
+container can use host
+
+
+docker run -it -p  88885:8085 -v /media/webapps/continous delivery:/usr/local/tomcat/webapps tomcat
+----------------------------------------------
+
+
+
+Getting github project
+open new terminal
+git version
+cd /home
+cd /sanjay
+mkdir samplerepo
+copy the path of gradle project from github
+
+git clone "url"
+
+
+apt-get update && apt-get install gradle
+
+open build.gradle
+
+nano build.gradle
+comment sonarRunner
+ctrl+x enter
+
+
+
+nano Dockerfile
+----------------
+FROM qlik/gradle
+#FROM frekel/gradle:2.14.1-jdk7
+
+MAINTAINER sanjay.degaonkar@capgemini.com
+COPY . /var/project
+ENTRYPOINT ["java","version"]
+#ENTRYPOINT ["gradle","test"]
+
+
+
+
+docker build -t abchode/hello-world .
+
+
+to see output
+docker -it abghode/hello-world
+
+
+docker -rmi -f  abghode/hello-world
+
+
+
+
+
+
+
+
+
+
+
