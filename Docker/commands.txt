@@ -1,0 +1,107 @@
+mount -t vboxsf demos /media/window-share
+
+export http_proxy=http://corp\zhasan:password%0024004@inpunwbs02-wcg.corp.capgemini.com:8080
+
+wget -q -O - http://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
+
+
+echo deb http://pkg.jenkins.io/debian binary/ > /etc/apt/sources.list.d/jenkins.list
+echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list
+
+apt-get update
+
+apt-get install -y jenkins
+
+export http_proxy=http://corp\\<user>:<password>@inpunwbs02-wcg.corp.capgemini.com
+
+sudo /etc/init.d/jenkins start / restart
+
+
+add-apt-repository ppa:cwchien/gradle
+
+
+mkdir -p ~/opt/packages/gradle && cd $_
+
+mkdir -p ~/opt/packages/gradle && cd $_
+
+wget https://services.gradle.org/distributions/gradle-2.3-bin.zip
+
+unzip gradle-2.3-bin.zip
+
+wget https://services.gradle.org/distributions/gradle-2.3-bin.zip
+
+unzip gradle-2.3-bin.zip
+
+ln -s ~/opt/packages/gradle/gradle-2.3/ ~/opt/gradle
+
+gedit ~/.profile
+
+
+# Gradle
+if [ -d "$HOME/opt/gradle" ]; then
+    export GRADLE_HOME="$HOME/opt/gradle"
+    PATH="$PATH:$GRADLE_HOME/bin"
+fi
+
+
+source ~/.profile
+
+which gradle
+
+gradle -version
+
+
+
+
+
+
+
+
+wget -q -O - https://get.docker.com/gpg | apt-key add -
+
+echo deb http://get.docker.com/ubuntu docker main > /etc/apt/sources.list.d/dockers.list
+
+apt-get update
+
+apt-get install -y lxc-docker
+
+service docker start | stop
+
+
+docker run -t /bin/bash
+
+exit // to stop docker image
+
+docker ps
+
+docker ps -a
+
+docker start <id>
+
+docker attach <id>
+
+
+
+curl -L https://github.com/docker/machine/releases/download/v0.4.0/docker-machine_linux-amd64 /usr/local/bin/docker-machine
+
+
+chmod +x /usr/local/bin/docker-machine
+
+
+curl -L https://github.com/docker/machine/releases/download/v0.8.1/docker-machine-`uname -s`-`uname -m` >/usr/local/bin/docker-machine && \
+  chmod +x /usr/local/bin/docker-machine
+
+
+
+
+
+
+
+
+
+
+
+
+
+
