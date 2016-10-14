@@ -1,0 +1,8 @@
+Classpath:
+
+.;C:\Program Files (x86)\QuickTime\QTSystem\QTJava.zip;C:\Program Files\Java\jdk1.8.0_102\lib;C:\Program Files\Java\jre1.8.0_102\lib
+
+
+Path:
+
+C:\Program Files\Java\jdk1.8.0_102\bin;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\CapgeminiScripts\Support Tools\;C:\Program Files\MongoDB\Server\3.2\bin;C:\Program Files\Java\jre1.8.0_102\bin;C:\Program Files\Java\jdk1.8.0_102\bin;C:\Program Files\Git\cmd;D:\gradle-3.0\bin
