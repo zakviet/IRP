@@ -1,0 +1,24 @@
+I've tried updating my build.gradle file such that:apply plugin: 'java'
+apply plugin:'application'
+mainClassName = "Run"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile "junit:junit:4.11"
+}
+
+run{
+    systemProperties = ['java.util.logging.config.file' : 'logging.properties']
+}I've included:systemProperties = ['java.util.logging.config.file' : 'logging.properties']Then created /src/main/resource/logging.propertiesshandlers= java.util.logging.ConsoleHandler
+.level= CONFIG
+java.util.logging.ConsoleHandler.level = FINER
+java.util.logging.ConsoleHandler.formatter = java.util.logging.SimpleFormatterRunning:gradle runI get::compileJava UP-TO-DATE
+:processResources UP-TO-DATE
+:classes UP-TO-DATE
+:run
+Hello World
+
+BUILD SUCCESSFUL
